@@ -45,16 +45,13 @@ npm install
 6. Copy the token (save it in a secure place!)
 
 ### Running the Application
-Development mode:
-
+Development mode:  
 npm run dev
 
-Production build:
-
+Production build:  
 npm run build
 
-Preview production build:
-
+Preview production build:  
 npm run preview
 
 The application will open at: `http://localhost:5173`
