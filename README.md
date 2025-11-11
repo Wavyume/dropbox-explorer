@@ -27,12 +27,10 @@ A modern web application for browsing, navigating, and managing Dropbox files wi
 Clone the repository
 git clone https://github.com/yourusername/dropbox-explorer.git
 
-Navigate to project directory
-
+Navigate to project directory:  
 cd dropbox-explorer
 
-Install dependencies
-
+Install dependencies:  
 npm install
 
 ### Getting Dropbox Access Token
