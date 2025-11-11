@@ -1,0 +1,40 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+
+  border-radius: 2rem;
+  font-size: 14px;
+  gap: 4px;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  background: none;
+  border: none;
+  color: #007aff;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  font-size: 14px;
+}
+
+.button:hover {
+  background: #e8e8ea;
+}
+
+.current {
+  color: #1d1d1f;
+  font-weight: 500;
+  padding: 4px 8px;
+}
+
+.separator {
+  color: #8e8e93;
+  margin: 0 4px;
+}
