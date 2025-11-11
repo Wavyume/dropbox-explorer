@@ -93,23 +93,50 @@ The application will open at: `http://localhost:5173`
 ---
 
 ## 📁 Project Structure
-dropbox-explorer/
-├── src/
-│ ├── components/ # React components
-│ │ ├── Breadcrumbs/
-│ │ ├── FileItem/
-│ │ ├── FolderItem/
-│ │ ├── PreviewModal/
-│ │ ├── TokenAuth/
-│ │ └── Toolbar/
-│ ├── features/ # Application features
-│ │ └── FileExplorer/
-│ ├── services/ # Services
-│ │ └── dropbox/
-│ │ ├── dropboxAuth.ts
-│ │ └── dropboxService.ts
-│ ├── App.tsx
-│ └── main.tsx
-├── package.json
-└── README.md
-
+```
+DBB_TEST/
+├── .env                # (Hidden file) Your Dropbox API token (key) is stored here.
+├── dist/               # Folder for the finished, built project (appears after "build").
+├── node_modules/       # All downloaded libraries (React, Dropbox SDK, etc.).
+├── public/             # Public files (favicon, index.html).
+└── src/                # "Source" - all your logic is here.
+    │
+    ├── components/     # "Dumb" components (UI building blocks).
+    │   ├── Breadcrumbs/  # "Breadcrumbs" (show the path: Home / Folder / File)
+    │   │   ├── Breadcrumbs.module.css
+    │   │   └── Breadcrumbs.tsx
+    │   ├── FileItem/     # Component to display a single file in the list.
+    │   │   ├── FileItem.module.css
+    │   │   └── FileItem.tsx
+    │   ├── FolderItem/   # Component to display a single folder in the list.
+    │   │   ├── FolderItem.module.css
+    │   │   └── FolderItem.tsx
+    │   ├── PreviewModal/ # Modal window for preview (if you decide to implement it).
+    │   │   ├── PreviewModal.module.css
+    │   │   └── PreviewModal.tsx
+    │   ├── TokenAuth/    # Component that asks for the token (key).
+    │   │   ├── TokenAuth.module.css
+    │   │   └── TokenAuth.tsx
+    │   └── Toolbar/      # Top panel with buttons ("Back", "Upload").
+    │       ├── Toolbar.module.css
+    │       └── Toolbar.tsx
+    │
+    ├── features/       # "Smart" components (business logic).
+    │   └── FileExplorer/ # The main component that manages everything.
+    │       ├── FileExplorer.module.css
+    │       ├── FileExplorer.tsx  # Assembles everything (toolbar, file list) and holds the state (which folder we are in).
+    │       └── useFileExplorer.ts # "Hook" - all logic (loading, clicks, errors) is extracted here to keep the component clean.
+    │
+    ├── services/       # Logic for communicating with external APIs.
+    │   └── dropbox/
+    │       ├── dropboxAuth.ts    # Logic related to getting/saving the token.
+    │       ├── dropboxClient.ts  # Configuration of the Dropbox SDK itself (e.g., creating a client with the token).
+    │       └── dropboxService.ts # Main service: `getFiles()`, `getFolders()` functions, etc.
+    │
+    ├── utils/          # Helper functions (e.g., "format date", "truncate filename").
+    │
+    ├── App.css         # Global styles for the entire application.
+    ├── App.tsx         # The main component. Usually routing is here or, in your case, logic: "Show TokenAuth or FileExplorer?".
+    ├── index.css       # The most basic styles (for body, html).
+    └── main.tsx        # Entry point of the application (where React "connects" to index.html).
+```
