@@ -28,9 +28,11 @@ Clone the repository
 git clone https://github.com/yourusername/dropbox-explorer.git
 
 Navigate to project directory
+
 cd dropbox-explorer
 
 Install dependencies
+
 npm install
 
 ### Getting Dropbox Access Token
